@@ -23,7 +23,7 @@ public class NewCalc {
             case "1": calc(); break;
             case "2": findMaxArrayElement();
         }
-
+        br.close();
     }
 
     /**
