@@ -79,16 +79,15 @@ public class NewCalc {
         }while (count<=0);
 
         String[] dictionary = new String[count];
-        int max = 0;
         for (int i = 0; i < count; i++) {
             System.out.println("Введите слово "+ (i+1) +"/" + count);
             dictionary[i] = getFromConsole();
-
         }
-        for (int i = 0; i < dictionary.length; i++) {
-            if (max< dictionary[i].length()) max = dictionary[i].length();
+        String maxText = dictionary[0];
+        for (int i = 1; i < dictionary.length; i++) {
+            if (maxText.length() < dictionary[i].length()) maxText = dictionary[i];
         }
-        System.out.printf("Максимальная длина текста в массиве : %d", max);
+        System.out.printf("Самое длинное слово в словаре : %s", maxText);
 
     }
 
@@ -142,7 +141,7 @@ public class NewCalc {
      */
     public static double getDoubleFromConsole(String text) throws IOException {
         double result = 0.0;
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         do {
             System.out.println(text);
             String value = br.readLine();
